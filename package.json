@@ -1,7 +1,9 @@
 {
     "name": "interview-tasks",
     "private": true,
-    "version": "0.0.0",
+    "version": "1.0.0",
+    "description": "3iTech interview tasks solutions made with Vite, TypeScript, Jest and SCSS",
+    "author": "Boris Chernyshov <boris.chernystrand@gmail.com>",
     "type": "module",
     "scripts": {
         "dev": "vite",
@@ -9,7 +11,11 @@
         "preview": "vite preview",
         "test": "jest --coverage",
         "test:watch": "jest --watch",
-        "prepare": "husky install"
+        "prepare": "husky install",
+        "clean": "rimraf coverage build tmp",
+        "prebuild": "npm run lint",
+        "lint": "eslint . --max-warnings=0",
+        "prettier": "prettier --write ."
     },
     "devDependencies": {
         "@types/jest": "^29.5.5",
